@@ -1,0 +1,22 @@
+spring:
+  # set name app
+  application:
+    name: Server App
+  # setup database connection
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_absengo
+    username: root
+    password:
+  # setup hibernate jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+# security:
+#   user:
+#     name: user
+#     password: user

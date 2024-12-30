@@ -1,0 +1,14 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+}

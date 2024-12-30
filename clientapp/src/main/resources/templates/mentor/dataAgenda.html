@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+
+    <title>Data Agenda</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Include DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
+    />
+    <link rel="stylesheet" th:href="@{css/navbar.css}" />
+  </head>
+  <body>
+    <!-- Panggil Fragment Navbar -->
+    <div th:replace="~{components/navbarMentor.html :: navbar}"></div>
+    <div class="container mt-4">
+      <div class="card p-4 shadow-sm">
+        <!-- Header Section -->
+        <div class="my-2 d-flex justify-content-between align-items-center">
+          <h3 class="fw-bold">Data Agenda</h3>
+          <button
+            class="btn btn-success btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#tambahModal"
+          >
+            Tambah Agenda
+          </button>
+        </div>
+        <table class="table mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th>No.</th>
+              <th>Judul Agenda</th>
+              <th>Agenda</th>
+              <th>Tahun Ajaran</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="agenda, iterStat : ${agendaList}">
+              <td th:text="${iterStat.index + 1}"></td>
+              <td th:text="${agenda.judul_agenda}"></td>
+              <td th:text="${agenda.agenda}"></td>
+              <td th:text="${agenda.tahun_ajaran}"></td>
+              <td>
+                <a
+                  class="btn btn-warning"
+                  th:href="@{/kelola-agenda/edit/{id}(id=${agenda.id_agenda})}"
+                  >Edit</a
+                >
+                <a
+                  th:href="@{/kelola-agenda/delete/{id}(id=${agenda.id_agenda})}"
+                  class="btn btn-danger"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal Tambah Agenda -->
+    <div
+      class="modal fade"
+      id="tambahModal"
+      tabindex="-1"
+      aria-labelledby="tambahModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tambahModalLabel">Tambah Agenda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="#"
+              th:action="@{/kelola-agenda/tambah}"
+              method="post"
+              th:object="${agenda}"
+            >
+              <div class="mb-3">
+                <label for="judul_agenda" class="form-label"
+                  >Judul Agenda</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="judul_agenda"
+                  name="judul_agenda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="agenda" class="form-label">Agenda</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="agenda"
+                  name="agenda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tahun_ajaran" class="form-label"
+                  >Tahun Ajaran</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tahun_ajaran"
+                  name="tahun_ajaran"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      // Inisialisasi DataTables
+      $(document).ready(function () {
+        $(".table").DataTable();
+      });
+      
+
+      
+    </script>
+  </body>
+</html>

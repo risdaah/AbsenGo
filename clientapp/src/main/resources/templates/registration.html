@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/auth}"
+>
+  <head>
+    <title>Registration - AbsenGo</title>
+    <link rel="stylesheet" href="path/to/your/css" />
+  </head>
+  <body>
+    <!-- content -->
+    <div layout:fragment="content">
+      <!-- btn back to welcome-->
+      <div class="btn-back-container">
+        <a th:href="@{/welcome}" class="btn btn-back">
+          <i class="fas fa-arrow-left"></i> Back
+        </a>
+      </div>
+      <div class="login-page">
+        <div class="login-container">
+          <div class="row justify-content-center">
+            <div class="col-11 col-md-8">
+              <div class="login-card">
+                <div class="login-header">
+                  <h3>AbsenGo</h3>
+                  <p class="text-muted">Silahkan Daftar Akun Baru</p>
+                </div>
+
+                <!-- Form Registration -->
+                <form
+                  id="registrationForm"
+                  th:action="@{/registration}"
+                  method="POST"
+                  th:object="${registrationRequest}"
+                >
+                  <div class="row">
+                    <!-- Kolom Kiri (Nama Depan, Nama Belakang, Username, Password) -->
+                    <div class="col-md-6">
+                      <div class="form-group mb-3">
+                        <label for="namaDepan">Nama Depan</label>
+                        <input
+                          type="text"
+                          id="namaDepan"
+                          name="namaDepan"
+                          class="form-control"
+                          placeholder="Masukkan nama depan"
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="namaBelakang">Nama Belakang</label>
+                        <input
+                          type="text"
+                          id="namaBelakang"
+                          name="namaBelakang"
+                          class="form-control"
+                          placeholder="Masukkan nama belakang"
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="username">Username</label>
+                        <input
+                          type="text"
+                          id="username"
+                          name="username"
+                          class="form-control"
+                          placeholder="Masukkan username yang diinginkan"
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="password">Password</label>
+                        <input
+                          type="password"
+                          id="password"
+                          name="password"
+                          class="form-control"
+                          placeholder="Masukkan password anda"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Kolom Kanan (Email, Jurusan, Kampus, Jenis Program) -->
+                    <div class="col-md-6">
+                      <div class="form-group mb-3">
+                        <label for="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          class="form-control"
+                          placeholder="Masukkan email anda"
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="jurusan">Jurusan</label>
+                        <input
+                          type="text"
+                          id="jurusan"
+                          name="jurusan"
+                          class="form-control"
+                          placeholder="Masukkan jurusan"
+                        />
+                      </div>
+                      <div class="form-group mb-3">
+                        <label for="kampus">Kampus</label>
+                        <input
+                          type="text"
+                          id="kampus"
+                          name="kampus"
+                          class="form-control"
+                          placeholder="Masukkan nama kampus"
+                        />
+                      </div>
+                      <!-- Jenis Program -->
+                      <div class="form-group mb-3">
+                        <label for="jenis">Jenis</label>
+                        <input
+                          type="text"
+                          id="jenis"
+                          name="jenis"
+                          class="form-control"
+                          placeholder="Masukkan Jenis Program"
+                        />
+                      </div>
+                        <!-- Tutup Jenis Program -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tombol Daftar -->
+                  <button type="submit" class="btn btn-login">
+                    Daftar
+                    <span
+                      class="spinner-border spinner-border-sm d-none"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+
+                  <!-- Link ke login -->
+                  <div class="text-center">
+                    <span class="text-muted">Sudah Punya akun?</span>
+                    <a
+                      href="/login"
+                      class="text-primary text-decoration-none ms-1"
+                      >Masuk Disini</a
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

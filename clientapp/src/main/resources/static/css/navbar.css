@@ -1,0 +1,60 @@
+/* Warna background navbar */
+.navbar-custom {
+  background-color: #6bcda1;
+  /* Hijau sesuai */
+}
+
+/* Warna brand (AbsenGo) */
+.navbar-brand {
+  color: white;
+  text-decoration: none;
+  /* Hilangkan underline */
+}
+
+/* Warna teks untuk link navbar */
+.navbar-nav .nav-link {
+  color: white;
+  text-decoration: none;
+  /* Hilangkan underline */
+  padding: 5px 10px;
+  /* Tambahkan sedikit padding */
+}
+
+/* Warna link saat di-hover */
+.navbar-nav .nav-link:hover {
+  color: #0f1136;
+  /* Oranye saat hover */
+  background-color: #f2f2f2;
+  /* Warna latar belakang saat hover */
+  border-radius: 5px;
+  /* Tambahkan sudut melengkung */
+}
+
+/* Tombol toggler di perangkat kecil */
+.navbar-toggler {
+  border-color: white;
+  /* Border putih */
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  /* Warna icon toggle */
+}
+
+/* Font untuk seluruh dokumen */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Bagian footer */
+.footer-section {
+  margin-top: 50px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.footer-text {
+  color: #6c757d;
+  /* Warna teks abu-abu */
+  font-size: 0.9rem;
+}
