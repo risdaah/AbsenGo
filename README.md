@@ -1,28 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/dmXzAj9b)
+
 ## **`Information for the Final Project Repository`**
 
 ### **`Title: AbsenGo`**
 
 ---
 
-### **`Kelompok 3:`**
-
-- **Chrysna Rinaldy Maturbongs**
-- **Moch. Wahyu Sampurno Utomo**
-- **Risda Rahmawati Harsono**
-- **Dimas Aryansyah**
-
----
-
-### **`Ketentuan Repository:`**
-
-- 💻 Fokus pada pengerjaan kelompok masing-masing.
-- 🤓 Untuk kelompok lain bisa sharing
----
-
 ### **`Design & Documentation:`**
-
-_(silahkan edit sesuai kebutuhan, ex:)_
 
 - [Slide of Presentation](https://docs.google.com/presentation/d/15HVNFGTjYR1iCSKRMPxwZwLtHt6H_FRtjJdUnICn-54/edit?usp=sharing)
 - [BPMN](https://drive.google.com/file/d/1zIGKOvjZKvxrTup9D5ApulIok7iloVyd/view?usp=sharing)
@@ -86,14 +69,6 @@ _(silahkan edit sesuai kebutuhan, ex:)_
 ---
 
 ### **`Ketentuan Implementasi Repository:`**
-
-- Silahkan clone repository yang sudah disediakan untuk setiap kelompoknya masing-masing.
-- Setalah clone, silahkan masukkan folder project **`backend`** & **`frontend`** yang nanti teman-teman buat.
-- Untuk folder **`materials`** bisa diarsipkan dari **`hasil akhir final project`** export dari:
-  - **Testing endpoint pada postman dengan extension `.postman_collection`**
-  - **Database project dengan extension `.sql`**
-  - **Create folder `images` untuk menempatkan gambar screenshot project**
-    **`NOTE:` di bawah ini merupakan contoh struktur dari folder project.**
 
 ```
 |-- .gitignore
